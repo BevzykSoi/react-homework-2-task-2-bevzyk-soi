@@ -1,0 +1,53 @@
+.section {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.title {
+    font-size: 32px;
+}
+
+form {
+    border: 2px solid black;
+    max-width: 500px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.formTitle {
+    font-size: 24px;
+}
+
+form input {
+    width: 50%;
+    margin: 0 auto;
+    height: 25px;
+    border-radius: 5px;
+    border: 1.5px solid black;
+    padding-left: 10px;
+    transition: all 0.1s;
+}
+
+form input:focus {
+    border: none;
+    outline: 4px solid #0694d6;
+}
+
+.submitButton {
+    width: 30%;
+    height: 35px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+
+.submitButton:active {
+    transform: perspective(1px) scale(.90);
+}
