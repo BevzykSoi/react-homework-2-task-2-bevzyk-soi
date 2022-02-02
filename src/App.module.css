@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .section {
     width: 80%;
     margin: 0 auto;
@@ -5,25 +10,31 @@
     margin-top: 30px;
 }
 
+.mainTitle {
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
 .title {
     font-size: 32px;
+    margin-bottom: 30px;
 }
 
 form {
     border: 2px solid black;
     max-width: 500px;
-    height: 200px;
+    height: 350px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .formTitle {
     font-size: 24px;
 }
 
-form input {
+.formInput {
     width: 50%;
     margin: 0 auto;
     height: 25px;
@@ -33,7 +44,7 @@ form input {
     transition: all 0.1s;
 }
 
-form input:focus {
+.formInput:focus {
     border: none;
     outline: 4px solid #0694d6;
 }
@@ -50,4 +61,32 @@ form input:focus {
 
 .submitButton:active {
     transform: perspective(1px) scale(.90);
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.contacts li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.contacts li>h4 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter {
+    composes: formInput;
+    width: 250px;
+    margin: 15px auto;
 }
