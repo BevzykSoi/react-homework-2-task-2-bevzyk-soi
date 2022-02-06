@@ -1,0 +1,19 @@
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter {
+    height: 25px;
+    border-radius: 5px;
+    border: 1.5px solid black;
+    padding-left: 10px;
+    transition: all 0.1s;
+    width: 250px;
+    margin: 15px auto;
+}
+
+.filter:focus {
+    border: none;
+    outline: 4px solid #0694d6;
+}
