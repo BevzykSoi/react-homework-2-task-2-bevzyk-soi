@@ -17,6 +17,20 @@ export default class App extends React.Component {
     filter: "",
   };
 
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem("contacts"));
+
+    if (contacts) {
+      this.setState({ contacts });
+    }
+  }
+
+  componentDidUpdate(prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+    }
+  }
+
   addContact = (name, number) => {
     const contact = {
       id: nanoid(),
@@ -44,7 +58,9 @@ export default class App extends React.Component {
 
   deleteContact = (contactId) => {
     this.setState((prevState) => ({
-      contacts: prevState.contacts.filter((contact) => contact.id !== contactId),
+      contacts: prevState.contacts.filter(
+        (contact) => contact.id !== contactId
+      ),
     }));
   };
 
@@ -68,7 +84,10 @@ export default class App extends React.Component {
         <div className={styles.section}>
           <h2 className={styles.title}>Contacts:</h2>
           <Filter filter={filter} handleFilter={this.handleFilter} />
-          <ContactList filteredContacts={filteredContacts} deleteContact={this.deleteContact}/>
+          <ContactList
+            filteredContacts={filteredContacts}
+            deleteContact={this.deleteContact}
+          />
         </div>
       </>
     );
